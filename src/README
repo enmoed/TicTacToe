@@ -1,0 +1,35 @@
+This project was built for an assignment at The Hebrew University of Jerusalem School of Computer Science
+Some of the files included are part of provided course material for the assignment.
+
+TIC - TAC - TOE
+
+GeniusPlayer: The player goes through the columns from lowest to highest, increasing the row at the end of
+              each column, until it finds an open coordinate. While going through the row, we randomize, with
+              an equal probability, all the indices that are lower or equal to the current column. We then
+              check if that coordinate is available. This allows us to randomly skip some of the columns if a
+              coordinate in that row is already taken. This helps us play a more defensive game by spreading
+              out the marks.
+
+CleverPlayer: The player goes through the columns from lowest to highest, increasing the row at the end of
+              each column, until it finds an open coordinate.
+
+WhateverPlayer: The player randomly chooses an open row and a column and then plays that coordinate.
+
+The advantage is that all the other classes of the TicTacToe game can interact with any of the players through
+the same API. This makes it very easy to add new players to the game, without changing the other code, as well
+as creating abstraction between the game and the players.
+
+######### Results #########
+Player 1, whatever won: 614 rounds
+Player 2, clever won: 9385 rounds
+Ties: 1
+
+######### Results #########
+Player 1, clever won: 3998 rounds
+Player 2, genius won: 5981 rounds
+Ties: 21
+
+######### Results #########
+Player 1, whatever won: 3511 rounds
+Player 2, whatever won: 3479 rounds
+Ties: 3010
